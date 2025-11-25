@@ -1,0 +1,30 @@
+services:
+  django:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+    environment:
+      CLIENT_ID: "${CLIENT_ID}"
+      CLIENT_SECRET: "${CLIENT_SECRET}"
+      REDIRECT_URI: "${SPOTIFY_REDIRECT_URI}"
+      AUTH_URL: "${SPOTIFY_AUTH_URL}"
+      TOKEN_URL: "${SPOTIFY_TOKEN_URL}"
+      API_BASE_URL: "${SPOTIFY_API_BASE_URL}"
+      SCOPE: "${SPOTIFY_SCOPE}"
+      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY}"
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - tailwind
+
+  tailwind:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: npx tailwindcss -i ./backend/app/static/css/styles.css -o ./backend/app/static/css/tailwind.css --watch
