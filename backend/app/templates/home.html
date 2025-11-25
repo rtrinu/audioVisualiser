@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soundwave - Spotify Audio Visualizer</title>
+    <link
+      href="{% static 'css/styles.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="bg-base-900 text-base-content" data-theme="dark">
+    <!-- Navigation -->
+    <nav class="navbar bg-base-800 border-b border-base-700 sticky top-0 z-50">
+      <div class="flex-1">
+        <a
+          href="#"
+          class="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent"
+        >
+          Soundwave
+        </a>
+      </div>
+      <div class="flex-none gap-2">
+        <a href="#features" class="btn btn-ghost btn-sm">Features</a>
+        <a href="#about" class="btn btn-ghost btn-sm">About</a>
+        <a href="#contact" class="btn btn-ghost btn-sm">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+      >
+        <div class="absolute inset-0 -z-10">
+          <div
+            class="absolute top-1/3 right-0 w-96 h-96 bg-green-500 opacity-10 rounded-full blur-3xl animate-pulse"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600 opacity-10 rounded-full blur-3xl animate-pulse"
+          ></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl w-full items-center"
+        >
+          <div class="space-y-6">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+              Experience Your Music <span class="text-green-500">Visually</span>
+            </h1>
+            <p class="text-lg text-base-300 max-w-xl">
+              Transform your Spotify tracks into stunning visual experiences
+              with our real-time audio visualizer.
+            </p>
+            <a
+              href="https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=http://localhost:3000/callback&scope=streaming%20user-read-email%20user-read-private"
+              class="btn btn-lg btn-success gap-2 w-fit"
+            >
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                />
+              </svg>
+              Login with Spotify
+            </a>
+          </div>
+          <div class="flex items-center justify-center">
+            <div
+              class="flex items-end justify-center gap-1 h-64 p-8 bg-base-800 rounded-lg border border-base-700"
+            >
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 40%; animation-duration: 0.3s"
+              ></div>
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 70%; animation-duration: 0.4s"
+              ></div>
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 55%; animation-duration: 0.35s"
+              ></div>
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 85%; animation-duration: 0.45s"
+              ></div>
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 50%; animation-duration: 0.38s"
+              ></div>
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 65%; animation-duration: 0.42s"
+              ></div>
+              <div
+                class="w-3 bg-green-500 rounded-full animate-pulse"
+                style="height: 45%; animation-duration: 0.33s"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-20 px-4 bg-base-800">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-4xl font-bold text-center mb-16">Features</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="card bg-base-900 border border-base-700 hover:border-green-500 transition-colors"
+            >
+              <div class="card-body">
+                <div class="text-4xl mb-3">🎵</div>
+                <h3 class="card-title text-xl">Real-time Visualization</h3>
+                <p>
+                  See your music come to life with responsive, real-time visual
+                  effects that sync perfectly with the beat.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="card bg-base-900 border border-base-700 hover:border-green-500 transition-colors"
+            >
+              <div class="card-body">
+                <div class="text-4xl mb-3">🎨</div>
+                <h3 class="card-title text-xl">Multiple Styles</h3>
+                <p>
+                  Choose from various visualization styles to match your mood or
+                  music genre.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="card bg-base-900 border border-base-700 hover:border-green-500 transition-colors"
+            >
+              <div class="card-body">
+                <div class="text-4xl mb-3">📱</div>
+                <h3 class="card-title text-xl">Responsive Design</h3>
+                <p>
+                  Enjoy your visualizations on any device - desktop, tablet, or
+                  mobile.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="card bg-base-900 border border-base-700 hover:border-green-500 transition-colors"
+            >
+              <div class="card-body">
+                <div class="text-4xl mb-3">🔊</div>
+                <h3 class="card-title text-xl">Full Spotify Integration</h3>
+                <p>
+                  Access your playlists, liked songs, and discover new music
+                  without leaving the app.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="about" class="py-20 px-4 bg-base-900">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-4xl font-bold text-center mb-16">How It Works</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-green-500 text-base-900 flex items-center justify-center text-2xl font-bold mb-4"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Login with Spotify</h3>
+              <p class="text-base-400">
+                Connect your Spotify account with a single click.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-green-500 text-base-900 flex items-center justify-center text-2xl font-bold mb-4"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Select a Track</h3>
+              <p class="text-base-400">
+                Choose any song from your Spotify library or search for
+                something new.
+              </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 rounded-full bg-green-500 text-base-900 flex items-center justify-center text-2xl font-bold mb-4"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Enjoy the Show</h3>
+              <p class="text-base-400">
+                Watch as your music transforms into stunning visual patterns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-base-800 border-t border-base-700 py-12">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-green-500">Soundwave</h4>
+            <p class="text-base-400 text-sm">
+              Transform your music into stunning visuals.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Links</h4>
+            <ul class="space-y-2 text-base-400 text-sm">
+              <li>
+                <a href="#features" class="hover:text-green-500 transition"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-green-500 transition"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-green-500 transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <p class="text-base-400 text-sm">
+              Email: info@soundwave-visualizer.com
+            </p>
+            <p class="text-base-400 text-sm">Twitter: @soundwave_viz</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-base-700 pt-6 text-center text-base-400 text-sm"
+        >
+          <p>&copy; 2025 Soundwave. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
