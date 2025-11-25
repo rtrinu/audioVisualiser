@@ -55,7 +55,7 @@
               with our real-time audio visualizer.
             </p>
             <a
-              href="https://accounts.spotify.com/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=http://localhost:3000/callback&scope=streaming%20user-read-email%20user-read-private"
+              href="{% url 'spotify:login' %}"
               class="btn btn-lg btn-success gap-2 w-fit"
             >
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
