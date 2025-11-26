@@ -50,9 +50,9 @@ def callback(request):
     if error:
         return JsonResponse({"error": error})
 
-    if "code" in request.args:
+    if code:
         req_body = {
-            "code": request.args["code"],
+            "code": code,
             "grant_type": "authorization_code",
             "redirect_uri": REDIRECT_URI,
             "client_id": CLIENT_ID,
